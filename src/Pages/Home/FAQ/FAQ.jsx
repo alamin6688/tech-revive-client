@@ -52,6 +52,17 @@ const FAQ = () => {
           </p>
         </div>
       </div>
+      <div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+        <div className="collapse-title text-xl font-bold">
+            Do you offer pickup and delivery services for repairs?
+        </div>
+        <div className="collapse-content">
+          <p className="text-[18px]">
+            Yes, We offer pickup and delivery services for our customers.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

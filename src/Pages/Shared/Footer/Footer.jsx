@@ -18,7 +18,7 @@ const Footer = () => {
               Copyright © 2024 - All right reserved
             </p>
             <p className="flex gap-2 justify-center items-center">
-              <span className="text-[16px]">Follow us on:</span>
+              <span className="text-[16px]">Follow us:</span>
               <FaFacebookSquare className="text-xl"/>
               <FaLinkedin className="text-xl"/>
 
