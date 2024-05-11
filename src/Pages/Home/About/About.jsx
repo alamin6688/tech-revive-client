@@ -2,8 +2,8 @@
 
 const About = () => {
   return (
-    <div className="hero bg-base-200 mt-8">
-        <div className="hero-content flex-col lg:flex-row">
+    <div className="hero bg-base-200 mt-8 rounded-2xl">
+        <div className="hero-content flex-col lg:flex-row pb-10">
         <div className='lg:w-1/2 relative'>
         <img src="https://i.postimg.cc/cLyC2b3W/male-mechanics-working-together-car-shop.jpg" 
             className="w-3/4 rounded-lg shadow-2xl"/>

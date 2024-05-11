@@ -2,7 +2,7 @@
 
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[400px] md:h-[700px] mt-10 mb-12">
+    <div className="carousel w-full h-[400px] md:h-[700px] mt-10 mb-12 shadow-2xl">
       <div id="slide1" className="carousel-item relative w-full">
         <img src="https://i.postimg.cc/9Qgg4wSL/front-view-man-repairing-computer.jpg" 
         className="w-full rounded-xl object-cover"/>
@@ -15,9 +15,6 @@ const Banner = () => {
                 <div>
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
-                    </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
                     </button>
                 </div>
             </div>
@@ -40,9 +37,6 @@ const Banner = () => {
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
                     </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
-                    </button>
                 </div>
             </div>
         </div>
@@ -63,9 +57,6 @@ const Banner = () => {
                 <div>
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
-                    </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
                     </button>
                 </div>
             </div>
@@ -88,9 +79,6 @@ const Banner = () => {
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
                     </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
-                    </button>
                 </div>
             </div>
         </div>
@@ -112,9 +100,6 @@ const Banner = () => {
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
                     </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
-                    </button>
                 </div>
             </div>
         </div>
@@ -135,9 +120,6 @@ const Banner = () => {
                 <div>
                     <button className='btn bg-[#FF3811] hover:bg-[#ff2a00] text-white mr-5 border-none'>
                     Discover More
-                    </button>
-                    <button className='btn btn-outline text-white hover:text-[#ff2a00] mb-4'>
-                    Latest News
                     </button>
                 </div>
             </div>

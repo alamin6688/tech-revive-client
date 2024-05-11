@@ -98,7 +98,7 @@ const Navbar = () => {
           </div>
           <Link to="/">
             <button className="btn btn-ghost font-bold text-xl md:text-3xl lg:text-4xl pl-0 md:pl-2 text-black ">
-              Tech Revive
+              Tech <span className="text-[#FF3811]">Revive</span>
             </button>
           </Link>
         </div>
