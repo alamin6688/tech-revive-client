@@ -8,7 +8,7 @@ const Footer = () => {
         <footer className="footer p-10 bg-[#151515] text-white mt-24">
           <aside>
             <div>
-                <GiAutoRepair className="text-6xl mb-1"/>
+                <GiAutoRepair className="text-5xl mb-1"/>
             </div>
             <p>
               Tech Revive Ltd.

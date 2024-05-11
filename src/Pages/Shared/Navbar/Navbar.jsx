@@ -17,21 +17,48 @@ const Navbar = () => {
 
   const navLinks = (
     <>
-      <NavLink className="btn px-3 text-[16px] text-[#ff2a00] bg-transparent border-none" to="/">
+      <NavLink
+        className="btn px-3 text-[16px] text-[#ff2a00] bg-transparent border-none"
+        to="/"
+      >
         Home
       </NavLink>
-      <NavLink className="btn px-3 text-[16px] ml-2 bg-transparent border-none" to="/all-services">
+      <NavLink
+        className="btn px-3 text-[16px] ml-2 bg-transparent border-none"
+        to="/all-services"
+      >
         All Services
       </NavLink>
       {user ? (
         <NavLink to="/dashboard">
-          <button className="btn px-3 text-[16px] ml-2 bg-transparent border-none">
-          Dashboard
-        </button>
+          <div className="dropdown dropdown-bottom">
+            <div tabIndex={0} role="button" className="btn px-3 text-[16px] ml-2 bg-transparent border-none">
+              Dashboard
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[0] menu p-2 shadow bg-gray-200 rounded-box w-52 text-black md:text-[16px] md:font-semibold"
+            >
+              <li>
+                <Link to="/add-service">Add Service</Link>
+              </li>
+              <li>
+                <Link to="/manage-service">Manage Service</Link>
+              </li>
+              <li>
+                <Link to="/booked-service">Booked Services</Link>
+              </li>
+              <li>
+                <Link to="/to-do-service">Service-To-Do</Link>
+              </li>
+            </ul>
+          </div>
         </NavLink>
       ) : (
         <Link to="/sign-up">
-          <button className="btn px-3 text-[16px] ml-2 bg-transparent border-none">Sign Up</button>
+          <button className="btn px-3 text-[16px] ml-2 bg-transparent border-none">
+            Sign Up
+          </button>
         </Link>
       )}
     </>
