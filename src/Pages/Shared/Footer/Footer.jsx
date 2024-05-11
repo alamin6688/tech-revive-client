@@ -1,17 +1,27 @@
 import { GiAutoRepair } from "react-icons/gi";
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div>
+
         <footer className="footer p-10 bg-[#151515] text-white mt-24">
           <aside>
             <div>
-                <GiAutoRepair className="text-6xl"/>
+                <GiAutoRepair className="text-6xl mb-1"/>
             </div>
             <p>
-              ACME Industries Ltd.
+              Tech Revive Ltd.
               <br />
-              Providing reliable tech since 1992
+              Providing reliable tech services since 2006
+              <br />
+              Copyright © 2024 - All right reserved
+            </p>
+            <p className="flex gap-2 justify-center items-center">
+              <span className="text-[16px]">Follow us on:</span>
+              <FaFacebookSquare className="text-xl"/>
+              <FaLinkedin className="text-xl"/>
+
             </p>
           </aside>
           <nav>
@@ -35,7 +45,7 @@ const Footer = () => {
             <a className="link link-hover">Cookie policy</a>
           </nav>
       </footer>
-      </div>
+      
     );
 };
 
