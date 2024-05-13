@@ -10,10 +10,10 @@ const AllServices = () => {
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
-        // Simulating 1 second delay before setting loading to false
+        // 0.5 second delay before setting loading to false
         setTimeout(() => {
           setLoading(false);
-        }, 1000);
+        }, 500);
       });
   }, []);
 
