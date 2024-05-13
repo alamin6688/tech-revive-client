@@ -25,7 +25,7 @@ const Services = () => {
                     Trustworthy electronic item repair services, specializing in diagnosing and resolving issues with precision and care. So you can enjoy your devices with peace of mind.
                 </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 p-6">
                 {displayedServices.map(service => (
                     <ServiceCard 
                     key={service._id} 
