@@ -1,7 +1,7 @@
 const FAQ = () => {
   return (
     <div className="mt-10">
-      <div className="border-b-8 border-[#FF3811] bg-gray-200 mb-6 rounded-3xl shadow-xl">
+      <div className="border-b-8 border-[#FF3811] bg-base-200 mb-6 rounded-3xl shadow-xl">
         <h3 className="text-center text-4xl pt-8 pb-8 font-bold">
           Frequently Asked Questions
         </h3>

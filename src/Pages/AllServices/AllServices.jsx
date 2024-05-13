@@ -3,7 +3,7 @@
 const AllServices = () => {
     return (
         <div>
-            AllServices
+            <h2>sdfiu</h2>
         </div>
     );
 };

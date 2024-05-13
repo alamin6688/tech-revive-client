@@ -49,10 +49,12 @@ const AddService = () => {
   };
 
   return (
-    <div className="bg-gray-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-center mt-6 md:mt-0 mb-10">
-        Add Service
-      </h2>
+    <div className="bg-base-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10">
+        <div className="border-b-8 border-[#FF3811] mb-10 rounded-3xl shadow-xl">
+        <h3 className="text-center  text-4xl pt-4 pb-6 font-bold ">
+          Add Service
+        </h3>
+      </div>
       <form onSubmit={handleAdd}>
         {/* 1st row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
@@ -62,7 +64,7 @@ const AddService = () => {
               type="text"
               name="serviceName"
               placeholder="Service Name"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
               required
             />
           </div>
@@ -72,7 +74,7 @@ const AddService = () => {
               type="number"
               name="price"
               placeholder="Price in $"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
         </div>
@@ -84,7 +86,7 @@ const AddService = () => {
               type="text"
               name="area"
               placeholder="Service Area"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
           <div className="w-full md:w-1/2">
@@ -93,7 +95,7 @@ const AddService = () => {
               type="text"
               name="description"
               placeholder="Short Description"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
         </div>
@@ -105,7 +107,7 @@ const AddService = () => {
               type="text"
               name="name"
               placeholder="Provider Name"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
           <div className="w-full md:w-1/2">
@@ -114,7 +116,7 @@ const AddService = () => {
               type="email"
               name="email"
               placeholder="Provider Email"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
         </div>
@@ -126,7 +128,7 @@ const AddService = () => {
               type="text"
               name="providerImage"
               placeholder="Image URL Here..."
-              className="input input-bordered w-full"
+              className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
         </div>
@@ -137,7 +139,7 @@ const AddService = () => {
             type="text"
             name="serviceImage"
             placeholder="Image URL Here..."
-            className="input input-bordered w-full"
+            className="input input-bordered border-none bg-gray-200 w-full"
           />
         </div>
 
@@ -145,7 +147,7 @@ const AddService = () => {
         <input
           type="submit"
           value="Add Service"
-          className="btn btn-primary border-none bg-orange-400 text-black font-bold hover:bg-orange-500 w-full"
+          className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none w-full"
         />
       </form>
     </div>
