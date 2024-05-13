@@ -11,6 +11,7 @@ import AddService from "../Pages/AddService/AddService";
 import ManageService from "../Pages/ManageService/ManageService";
 import BookedServices from "../Pages/BookedServices/BookedServices";
 import ToDoService from "../Pages/ToDoService/ToDoService";
+import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 
 
 
@@ -25,28 +26,33 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
+            path: 'services/:id',
+            element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
+            loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`),
+        },
+        {
             path: '/all-services',
             element: <AllServices></AllServices>
         },
         {
+            path: '/dashboard',
+            element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+        },
+        {
             path: '/add-service',
-            element: <AddService></AddService>
+            element: <PrivateRoute><AddService></AddService></PrivateRoute>
         },
         {
             path: '/manage-service',
-            element: <ManageService></ManageService>
+            element: <PrivateRoute><ManageService></ManageService></PrivateRoute>
         },
         {
             path: '/booked-service',
-            element: <BookedServices></BookedServices>
+            element: <PrivateRoute><BookedServices></BookedServices></PrivateRoute>
         },
         {
             path: '/to-do-service',
-            element: <ToDoService></ToDoService>
-        },
-        {
-            path: '/dashboard',
-            element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+            element: <PrivateRoute><ToDoService></ToDoService></PrivateRoute>
         },
         {
             path: '/login',
