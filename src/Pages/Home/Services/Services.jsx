@@ -1,6 +1,7 @@
 import  { useEffect, useState } from "react";
 import ServiceCard from "./ServiceCard";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -33,7 +34,8 @@ const Services = () => {
             </div>
             {!showAll && (
                 <div className="flex mt-8 justify-center  mb-1">
-                    <button onClick={() => setShowAll(true)} className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none">Show All...</button>
+                <Link to="/all-services">
+                <button onClick={() => setShowAll(true)} className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none">Show All...</button></Link>
                 </div>
             )}
         </div>
