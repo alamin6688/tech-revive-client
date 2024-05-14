@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
   const {
+    _id,
     serviceImage,
     serviceName,
     serviceDescription,
@@ -49,10 +50,11 @@ const ServiceDetails = () => {
               <strong>Price:</strong> {servicePrice}
             </p>
           </div>
-
+          <Link to={`/booked-service/${_id}`}>
           <button className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none w-3/12 mt-2 mb-4">
             Book Now
           </button>
+          </Link>
         </div>
       </div>
     </div>

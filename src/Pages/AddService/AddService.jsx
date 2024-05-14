@@ -43,7 +43,7 @@ const AddService = () => {
             icon: "success",
             confirmButtonText: "Okay",
           });
-          form.reset();
+          // form.reset();
         }
       });
   };
