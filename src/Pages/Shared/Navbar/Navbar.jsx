@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import DarkMode from "../../DarkMode/Darkmode";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -106,15 +107,23 @@ const Navbar = () => {
           <ul className="menu menu-horizontal p-0">{navLinks}</ul>
         </div>
         <div className="navbar-end mr-2">
+        <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar">
+            <div className="mt-1">
+              <DarkMode></DarkMode>
+            </div>
+          </div>
           <div
             tabIndex={0}
             role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
+            className="btn btn-ghost btn-circle avatar ml-3">
             <div className="w-10 rounded-full">
               {user ? <img src={user.photoURL} title={user.displayName} /> : ""}
             </div>
           </div>
+
 
           <div>
             {user ? (

@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 
 
-const ManageCard = ({service}) => {
+
+const ManageCard = ({service, handleDelete}) => {
+
 
     const {
         _id,
@@ -39,9 +42,12 @@ const ManageCard = ({service}) => {
                 </button>
             </div>
             <div>
-                <button className="btn text-[16px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none mb-2">
+                <Link to={`/services/${_id}`}>
+                <button onClick={()=>handleDelete(_id)}
+                className="btn text-[16px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none mb-2">
                     Delete
                 </button>
+                </Link>
             </div>
         </div>
       </div>

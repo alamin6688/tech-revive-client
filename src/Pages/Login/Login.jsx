@@ -33,7 +33,6 @@ const Login = () => {
   };
 
   const { signIn } = useContext(AuthContext);
-  // const {signIn} = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
   console.log("Location in the login page", location);
@@ -43,7 +42,6 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(email,password)
 
     signIn(email, password)
       .then((result) => {
