@@ -15,12 +15,12 @@ const AddService = () => {
 
     const newAddInfo = {
       serviceName: serviceName,
-      area: area,
-      description,
-      price,
-      name,
+      serviceArea: area,
+      serviceDescription: description,
+      servicePrice: price,
+      serviceProviderName: name,
       email,
-      providerImage: providerImage,
+      serviceProviderImage: providerImage,
       serviceImage: serviceImage,
     };
     console.log(newAddInfo);
