@@ -2,7 +2,7 @@
 
 const BookedServiceRow = ({booking}) => {
 
-    const {serviceName,serviceImage,date,price,providerName} = booking
+    const {serviceName,serviceImage,date,price,providerName} = booking;
 
     return (
         <tr className="text-[16px]">
