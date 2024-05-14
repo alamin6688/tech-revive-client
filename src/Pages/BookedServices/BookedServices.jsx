@@ -85,7 +85,7 @@ const BookedServices = () => {
             <input
               type="text"
               name="serviceName"
-              placeholder="Service Name"
+              defaultValue={selectedService.serviceName}
               className="input input-bordered border-none bg-gray-200 w-full"
               required
             />
@@ -95,7 +95,7 @@ const BookedServices = () => {
             <input
               type="number"
               name="price"
-              placeholder="Price in $"
+              defaultValue={80}
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -164,7 +164,7 @@ const BookedServices = () => {
             <input
               type="text"
               name="instruction"
-              placeholder="Special instruction"
+              placeholder="Special Instruction"
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -177,7 +177,7 @@ const BookedServices = () => {
           <input
             type="text"
             name="serviceImage"
-            placeholder="Image URL Here..."
+            defaultValue={selectedService.serviceImage}
             className="input input-bordered border-none bg-gray-200 w-full"
           />
         </div>

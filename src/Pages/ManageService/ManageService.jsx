@@ -1,8 +1,10 @@
 
 const ManageService = () => {
+
+
     return (
         <div>
-            Manage Service Page
+            Manage Service Page 
         </div>
     );
 };

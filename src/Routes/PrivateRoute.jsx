@@ -11,7 +11,7 @@ const PrivateRoute = ({children}) => {
 
     if(loading){
         return <div className="text-center mt-10">
-            <progress className="progress w-56"></progress>
+            <span className="loading loading-bars loading-lg"></span>
         </div>
     }
 
