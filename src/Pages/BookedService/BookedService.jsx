@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import BookedServiceRow from "./BookedServiceRow";
+import { Helmet } from "react-helmet-async";
 
 const BookedService = () => {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,9 @@ const BookedService = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Booked Services</title>
+      </Helmet>
       <div className="border-b-8 border-[#FF3811] bg-base-200 mb-6 rounded-3xl shadow-xl mt-6">
         <h3 className="text-center text-4xl pt-6 pb-6 font-bold">
           Your Booked Services

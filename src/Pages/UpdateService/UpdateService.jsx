@@ -1,18 +1,28 @@
+
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import Swal from "sweetalert2";
+import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
-const AddService = () => {
-  const {user}=useContext(AuthContext)
-  const handleAdd = (e) => {
+const UpdateService = () => {
+const {id}=useParams();
+const services=useLoaderData();
+const {user}=useContext(AuthContext)
+const clickedService = services.find(service=> service._id == id);
+console.log(clickedService)
+
+
+  const handleUpdateService = (e) => {
+    
     e.preventDefault();
     const form = e.target;
-    const serviceName = form.serviceName.value.toLowerCase();
+    const serviceName = form.serviceName.value;
     const price = form.price.value;
-    const area = form.area.value.toLowerCase();
+    const area = form.area.value;
     const description = form.description.value;
-    const name = form.name.value.toLowerCase();
+    const name = form.name.value;
     const email = form.email.value;
     const providerImage = form.providerImage.value;
     const serviceImage = form.serviceImage.value;
@@ -28,41 +38,30 @@ const AddService = () => {
       serviceImage: serviceImage,
     };
     console.log(newAddInfo);
-
-    //post servive
-    fetch("http://localhost:5000/add-service", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newAddInfo),
+    axios.patch(`http://localhost:5000/services/${clickedService._id}`,newAddInfo)
+    .then(res=>{
+      if (res.data.acknowledged) {
+        Swal.fire({
+          title: "success!",
+          text: "Service Updated Successfully",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      }
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.acknowledged) {
-          Swal.fire({
-            title: "success!",
-            text: "Service Added Successfully",
-            icon: "success",
-            confirmButtonText: "Okay",
-          });
-          // form.reset();
-        }
-      });
   };
 
   return (
     <div className="bg-base-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10">
       <Helmet>
-        <title>Add Service</title>
+        <title>Update Service</title>
       </Helmet>
       <div className="border-b-8 border-[#FF3811] mb-10 rounded-3xl shadow-xl">
         <h3 className="text-center  text-4xl pt-4 pb-6 font-bold ">
-          Add Service
+          Update Service
         </h3>
       </div>
-      <form onSubmit={handleAdd}>
+      <form onSubmit={handleUpdateService}>
         {/* 1st row */}
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
@@ -70,7 +69,7 @@ const AddService = () => {
             <input
               type="text"
               name="serviceName"
-              placeholder="Service Name"
+              defaultValue={clickedService?.serviceArea}
               className="input input-bordered border-none bg-gray-200 w-full"
               required
             />
@@ -78,9 +77,9 @@ const AddService = () => {
           <div className="w-full md:w-1/2">
             <label className="text-black font-bold">Price </label>
             <input
-              type="number"
+              type="text"
               name="price"
-              placeholder="Price in $"
+              defaultValue={clickedService?.servicePrice}
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -92,7 +91,8 @@ const AddService = () => {
             <input
               type="text"
               name="area"
-              placeholder="Service Area"
+              defaultValue={clickedService?.serviceArea}
+
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -101,7 +101,7 @@ const AddService = () => {
             <input
               type="text"
               name="description"
-              placeholder="Short Description"
+              defaultValue={clickedService?.serviceDescription}
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -114,6 +114,7 @@ const AddService = () => {
               type="text"
               name="name"
               defaultValue={user?.displayName}
+              
               className="input input-bordered border-none bg-gray-200 w-full"
             />
           </div>
@@ -145,7 +146,7 @@ const AddService = () => {
           <input
             type="text"
             name="serviceImage"
-            placeholder="Image URL Here..."
+            defaultValue={clickedService?.serviceImage}
             className="input input-bordered border-none bg-gray-200 w-full"
           />
         </div>
@@ -153,7 +154,7 @@ const AddService = () => {
         {/* submit here */}
         <input
           type="submit"
-          value="Add Service"
+          value="Update Service"
           className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none w-full"
         />
       </form>
@@ -161,4 +162,4 @@ const AddService = () => {
   );
 };
 
-export default AddService;
+export default UpdateService;

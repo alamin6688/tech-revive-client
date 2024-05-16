@@ -4,7 +4,6 @@ import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/Home/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 import AllServices from "../Pages/AllServices/AllServices";
 import PrivateRoute from "./PrivateRoute";
 import AddService from "../Pages/AddService/AddService";
@@ -14,6 +13,7 @@ import ToDoService from "../Pages/ToDoService/ToDoService";
 import ServiceDetails from "../Pages/ServiceDetails/ServiceDetails";
 import BookedServices from "../Pages/BookedServices/BookedServices";
 import BookedService from "../Pages/BookedService/BookedService";
+import UpdateService from "../Pages/UpdateService/UpdateService";
 
 
 
@@ -37,16 +37,17 @@ const router = createBrowserRouter([
             element: <AllServices></AllServices>
         },
         {
-            path: '/dashboard',
-            element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
-        },
-        {
             path: '/add-service',
             element: <PrivateRoute><AddService></AddService></PrivateRoute>
         },
         {
             path: '/manage-service',
             element: <PrivateRoute><ManageService></ManageService></PrivateRoute>
+        },
+        {
+            path: '/update-service/:id',
+            element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
+            loader: ()=> fetch(`http://localhost:5000/services`)
         },
         {
             path: '/booked-service',

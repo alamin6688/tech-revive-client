@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
@@ -15,6 +16,9 @@ const ServiceDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Service Detailes</title>
+      </Helmet>
       <div>
         <div className="border-b-8 border-[#FF3811] bg-base-200 mb-6 rounded-3xl shadow-xl mt-6">
           <h2 className="text-center text-4xl pt-8 pb-8 font-bold">
@@ -51,9 +55,9 @@ const ServiceDetails = () => {
             </p>
           </div>
           <Link to={`/booked-service/${_id}`}>
-          <button className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none w-3/12 mt-2 mb-4">
-            Book Now
-          </button>
+            <button className="btn text-[18px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none w-3/12 mt-2 mb-4">
+              Book Now
+            </button>
           </Link>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import app from "../../Firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const auth = getAuth(app);
@@ -57,6 +58,9 @@ const Login = () => {
 
   return (
     <div className="hero min-h-screen bg-base-200">
+      <Helmet>
+        <title>Tech Revive | Login</title>
+      </Helmet>
       <div className="hero-content flex-col lg:flex-row">
         <div className="w-1/2 mr-12">
           <img src={logo} alt="login-img" />
@@ -109,8 +113,9 @@ const Login = () => {
 
             <button
               onClick={handleGoogleSignIn}
-              className="btn border-none outline outline-1 outline-gray-500 mb-4 ">
-              <FaGoogle className="text-xl text-gray-600"/>
+              className="btn border-none outline outline-1 outline-gray-500 mb-4 "
+            >
+              <FaGoogle className="text-xl text-gray-600" />
               <span className="text-gray-700">Google</span>
             </button>
           </form>

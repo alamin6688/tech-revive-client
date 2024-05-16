@@ -31,14 +31,14 @@ const Navbar = () => {
         All Services
       </NavLink>
       {user ? (
-        <NavLink to="/dashboard">
+        <Link to="">
           <div className="dropdown dropdown-bottom">
             <div tabIndex={0} role="button" className="btn px-3 text-[16px] ml-2 bg-transparent border-none">
               Dashboard
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[0] menu p-2 shadow bg-gray-200 rounded-box w-52 text-black md:text-[16px] md:font-semibold"
+              className="dropdown-content z-[20] menu p-2 shadow bg-gray-200 rounded-box w-52 text-black md:text-[16px] md:font-semibold"
             >
               <li>
                 <Link to="/add-service">Add Service</Link>
@@ -54,7 +54,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        </NavLink>
+        </Link>
       ) : (
         <Link to="/sign-up">
           <button className="btn px-3 text-[16px] ml-2 bg-transparent border-none">

@@ -1,6 +1,6 @@
 
 
-const BookedServiceRow = ({booking}) => {
+const BookedServiceRow = ({booking }) => {
 
     const {serviceName,serviceImage,date,price,providerName} = booking;
 

@@ -3,64 +3,62 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import { Helmet } from "react-helmet-async";
 
 const BookedServices = () => {
+  const { user } = useContext(AuthContext);
+  const services = useLoaderData();
+  const { id } = useParams();
+  const selectedService = services.find((service) => service._id === id);
+  console.log(selectedService);
 
-    const {user} = useContext(AuthContext);
-    const services =useLoaderData();
-    const {id} = useParams() 
-    const selectedService = services.find((service) => service._id === id)
-    console.log(selectedService)
+  const handleBookService = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const serviceId = form.serviceId.value;
+    const serviceName = form.serviceName.value;
+    const price = form.price.value;
+    const providerName = form.providerName.value;
+    const providerEmail = form.providerEmail.value;
+    const instruction = form.instruction.value;
+    const serviceImage = form.serviceImage.value;
+    const date = form.date.value;
+    const name = form.name.value;
+    const email = user?.email;
+    const booking = {
+      serviceId,
+      serviceName,
+      providerEmail,
+      providerName,
+      name,
+      email,
+      instruction,
+      serviceImage,
+      date,
+      price,
+    };
 
-    const handleBookService = event =>{
-        event.preventDefault();
-        const form = event.target;
-        const serviceId = form.serviceId.value;
-        const serviceName = form.serviceName.value;
-        const price = form.price.value;
-        const providerName = form.providerName.value;
-        const providerEmail = form.providerEmail.value;
-        const instruction = form.instruction.value;
-        const serviceImage = form.serviceImage.value;
-        const date = form.date.value;
-        const name = form.name.value;
-        const email = user?.email;
-        const booking = {
-            serviceId,
-            serviceName,
-            providerEmail,
-            providerName,
-            name,
-            email,
-            instruction,
-            serviceImage,
-            date,
-            price
-        }
-        
-        console.log(booking)
-        
-        axios.post('http://localhost:5000/bookings',booking)
-        .then(res => {
-          if (res.data.acknowledged) {
-            Swal.fire({
-              title: "Booked!",
-              text: "Service Booked Successfully!",
-              icon: "success",
-              confirmButtonText: "Okay",
-            });
-          }
-          // form.reset()
-        })
+    console.log(booking);
 
-    }
+    axios.post("http://localhost:5000/bookings", booking).then((res) => {
+      if (res.data.acknowledged) {
+        Swal.fire({
+          title: "Booked!",
+          text: "Service Booked Successfully!",
+          icon: "success",
+          confirmButtonText: "Okay",
+        });
+      }
+      // form.reset()
+    });
+  };
 
-
-
-    return (
-        <div className="bg-base-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10">
-        <div className="border-b-8 border-[#FF3811] mb-10 rounded-3xl shadow-xl w-full">
+  return (
+    <div className="bg-base-200 p-4 lg:p-16 rounded-3xl shadow-2xl my-10">
+      <Helmet>
+        <title>Booking Service</title>
+      </Helmet>
+      <div className="border-b-8 border-[#FF3811] mb-10 rounded-3xl shadow-xl w-full">
         <h3 className="text-center text-4xl pt-4 pb-6 font-bold ">
           Book Your Service
         </h3>
@@ -78,7 +76,7 @@ const BookedServices = () => {
         </div>
 
         {/* 2nd row */}
-        
+
         <div className="flex flex-col md:flex-row gap-4 mb-8">
           <div className="w-full md:w-1/2">
             <label className="text-black font-bold">Service Name</label>
@@ -190,7 +188,7 @@ const BookedServices = () => {
         />
       </form>
     </div>
-    );
+  );
 };
 
 export default BookedServices;

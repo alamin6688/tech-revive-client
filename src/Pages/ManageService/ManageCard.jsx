@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 const ManageCard = ({ service, handleDelete }) => {
   const { _id, serviceName, serviceImage,serviceProviderName,serviceDescription,servicePrice } = service;
 
+
   return (
     <div className="card-compact w-full bg-base-100 shadow-2xl">
       <figure>
@@ -26,19 +27,20 @@ const ManageCard = ({ service, handleDelete }) => {
         </p>
         <div className="flex items-center justify-between">
           <div>
-            <button className="btn text-[16px] bg-blue-600 hover:bg-blue-700 text-white border-none mb-2">
+            <Link to={`/update-service/${_id}`}>
+            <button
+            className="btn text-[16px] bg-blue-600 hover:bg-blue-700 text-white border-none mb-2">
               Update
             </button>
+            </Link>
           </div>
           <div>
-            <Link to={`/services/${_id}`}>
               <button
                 onClick={() => handleDelete(_id)}
                 className="btn text-[16px] bg-[#FF3811] hover:bg-[#ff2a00] text-white border-none mb-2"
               >
                 Delete
               </button>
-            </Link>
           </div>
         </div>
       </div>
