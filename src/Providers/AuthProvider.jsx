@@ -52,13 +52,13 @@ const AuthProvider = ({ children }) => {
 
       // if user exist then issue a token
       if (currentUser) {
-        axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+        axios.post('https://tech-revive-server-phi.vercel.app/jwt', loggedUser, { withCredentials: true })
           .then((res) => {
             console.log('Token Response', res.data)
           })
       }
       else {
-        axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
+        axios.post('https://tech-revive-server-phi.vercel.app/logout', loggedUser, { withCredentials: true })
           .then((res) => {
             console.log('Token Response', res.data)
           })

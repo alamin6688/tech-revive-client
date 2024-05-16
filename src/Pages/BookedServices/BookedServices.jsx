@@ -40,7 +40,7 @@ const BookedServices = () => {
 
     console.log(booking);
 
-    axios.post("http://localhost:5000/bookings", booking).then((res) => {
+    axios.post("https://tech-revive-server-phi.vercel.app/bookings", booking).then((res) => {
       if (res.data.acknowledged) {
         Swal.fire({
           title: "Booked!",

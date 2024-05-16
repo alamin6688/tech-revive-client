@@ -7,7 +7,7 @@ const ManageService = () => {
   const [services, setServices] = useState([]);
 
 
-  const url = `http://localhost:5000/services`;
+  const url = `https://tech-revive-server-phi.vercel.app/services`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -19,7 +19,7 @@ const ManageService = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure you want to delete?");
     if (proceed) {
-      fetch(`http://localhost:5000/services/${id}`, {
+      fetch(`https://tech-revive-server-phi.vercel.app/services/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

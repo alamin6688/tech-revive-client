@@ -38,7 +38,7 @@ console.log(clickedService)
       serviceImage: serviceImage,
     };
     console.log(newAddInfo);
-    axios.patch(`http://localhost:5000/services/${clickedService._id}`,newAddInfo)
+    axios.patch(`https://tech-revive-server-phi.vercel.app/services/${clickedService._id}`,newAddInfo)
     .then(res=>{
       if (res.data.acknowledged) {
         Swal.fire({

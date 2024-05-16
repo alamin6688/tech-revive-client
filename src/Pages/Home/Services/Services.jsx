@@ -8,7 +8,7 @@ const Services = () => {
     const [showAll, setShowAll] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://tech-revive-server-phi.vercel.app/services')
         .then(res => res.json())
         .then(data => setServices(data));
     }, []);

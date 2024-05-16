@@ -11,7 +11,7 @@ const BookedService = () => {
 
   useEffect(() => {
     axiousSecure
-      .get(`http://localhost:5000/bookings?email=${user?.email}`, {
+      .get(`https://tech-revive-server-phi.vercel.app/bookings?email=${user?.email}`, {
         withCredentials: true,
       })
       .then((res) => {

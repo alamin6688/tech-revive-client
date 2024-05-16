@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         {
             path: 'services/:id',
             element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
-            loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`),
+            loader: ({params})=>fetch(`https://tech-revive-server-phi.vercel.app/services/${params.id}`),
         },
         {
             path: '/all-services',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
         {
             path: '/update-service/:id',
             element: <PrivateRoute><UpdateService></UpdateService></PrivateRoute>,
-            loader: ()=> fetch(`http://localhost:5000/services`)
+            loader: ()=> fetch(`https://tech-revive-server-phi.vercel.app/services`)
         },
         {
             path: '/booked-service',
@@ -56,11 +56,11 @@ const router = createBrowserRouter([
         {
             path: '/booked-service/:id',
             element: <PrivateRoute><BookedServices></BookedServices></PrivateRoute>,
-            loader: () => fetch('http://localhost:5000/services')
+            loader: () => fetch('https://tech-revive-server-phi.vercel.app/services')
         },
         {
             path: '/to-do-service',
-            element: <PrivateRoute><ToDoService></ToDoService></PrivateRoute>
+            element:<ToDoService></ToDoService>
         },
         {
             path: '/login',

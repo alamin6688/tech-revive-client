@@ -30,7 +30,7 @@ const AddService = () => {
     console.log(newAddInfo);
 
     //post servive
-    fetch("http://localhost:5000/add-service", {
+    fetch("https://tech-revive-server-phi.vercel.app/add-service", {
       method: "POST",
       headers: {
         "content-type": "application/json",
