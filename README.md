@@ -1,8 +1,18 @@
-# React + Vite
+<h1><strong>Tech Revive</strong></h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>Live Site URL: https://tech-revive.web.app/</h3>
 
-Currently, two official plugins are available:
+<h2><strong>## Features and Characteristics</strong></h2>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p><strong>🔸</strong>  </p>
+
+<h2><strong>## NPM Package Used
+</strong>Helmet</h2>
+
+<p><strong></strong></p>
+
+
+<h2><strong>##  Selected Category Name
+</strong></h2>
+
+<p><strong>🔸assignment_category_0002</strong></p>
