@@ -2,17 +2,22 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import BookedServiceRow from "./BookedServiceRow";
 import { Helmet } from "react-helmet-async";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const BookedService = () => {
   const { user } = useContext(AuthContext);
+  const axiousSecure = useAxiosSecure();
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/bookings?email=${user.email}`;
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setBookings(data));
-  }, [url]);
+    axiousSecure
+      .get(`http://localhost:5000/bookings?email=${user?.email}`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setBookings(res.data);
+      });
+  }, [user?.email, axiousSecure]);
 
   return (
     <div>
@@ -37,7 +42,7 @@ const BookedService = () => {
             </tr>
           </thead>
           <tbody>
-            {bookings.map((booking) => (
+            {bookings?.map((booking) => (
               <BookedServiceRow
                 key={booking._id}
                 booking={booking}

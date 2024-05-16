@@ -6,7 +6,8 @@ const Footer = () => {
     return (
 
         <footer className="footer p-10 bg-[#151515] text-white mt-24">
-          <aside>
+        <div className="max-w-6xl mx-auto footer">
+        <aside>
             <div>
                 <GiAutoRepair className="text-5xl mb-1"/>
             </div>
@@ -44,6 +45,7 @@ const Footer = () => {
             <a className="link link-hover">Privacy policy</a>
             <a className="link link-hover">Cookie policy</a>
           </nav>
+        </div>
       </footer>
       
     );
